@@ -11,36 +11,37 @@ body {
 }
 
 header {
-    background-color: rgb(117, 35, 35);
+    background-color: rgb(68, 16, 16);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: clamp(10px, 2vw, 20px) 5%;
+    outline: 4px solid rgb(87, 18, 18);
+
 }
 
 .logo {
     cursor: pointer;
-    height: clamp(35px, 5vw, 55px);
+    height: clamp(30px, 6vw, 60px);
     width: auto;
-    margin-right: clamp(20px, 2vw, 30px);
+    margin-right: clamp(10px, 2vw, 30px);
 }
 
 .nav_links {
     list-style: none;
     display: flex;
     gap: clamp(10px, 2vw, 25px);
-    transform: translateY(clamp(5px, 2vw, 20px));
-    gap: clamp(10px, 2vw, 25px);
+    transform: translateY(clamp(5px, 2vw, 10px));
 
-    /* Inner brown box */
+    /* Inner brown box
     background-color: rgb(117, 35, 35);
     padding: clamp(10px, 2vw, 20px);
     border-radius: clamp(6px, 1vw, 10px);
-    box-shadow: 0 0 0 10px #24252A;
+    box-shadow: 0 0 0 10px #24252A; */
 }
 
 .nav_links a {
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-size: clamp(0.7rem, 1vw, 1.1rem);
     color: #edf0f1;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -57,9 +58,55 @@ header {
 }
 
 
-/* If CTA contains an image */
 .cta img {
     height: clamp(28px, 4vw, 40px);
     width: auto;
     border-radius: 50%;
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #edf0f1;
+    cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: column;
+        background-color: rgb(68, 16, 16);
+        width: 100%;
+        display: none;
+        padding: 20px;
+    }
+
+    .nav_links.active {
+        display: flex;
+    }
+
+    .cta {
+        margin-left: auto;
+    }
 }
